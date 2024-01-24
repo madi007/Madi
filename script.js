@@ -1,4 +1,5 @@
 let display = document.getElementById('display');
+let historyList = document.getElementById('history-list');
 let currentExpression = '';
 
 function appendToDisplay(value) {
@@ -26,12 +27,7 @@ function calculate() {
     }
 }
 
-function saveResult() {
-    addToHistory(display.value);
-}
-
 function addToHistory(result) {
-    let historyList = document.getElementById('history-list');
     let listItem = document.createElement('li');
     listItem.textContent = result;
     historyList.appendChild(listItem);
