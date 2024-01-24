@@ -1,3 +1,5 @@
+// script.js
+
 async function showSchedule() {
     var scheduleDiv = document.getElementById('courseSchedule');
     var scheduleList = document.getElementById('scheduleList');
@@ -57,3 +59,4 @@ async function saveSchedule() {
     } catch (error) {
         console.error('Ошибка при сохранении расписания:', error);
     }
+}
