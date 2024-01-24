@@ -1,21 +1,26 @@
 let display = document.getElementById('display');
 let historyList = document.getElementById('history-list');
+let currentExpression = '';
 
 function appendToDisplay(value) {
     display.value += value;
+    currentExpression += value;
 }
 
 function clearDisplay() {
     display.value = '';
+    currentExpression = '';
 }
 
 function calculate() {
     try {
-        let result = eval(display.value);
+        let result = eval(currentExpression);
         display.value = result;
         addToHistory(result);
+        currentExpression = '';  // Сбросить текущее выражение после вычисления
     } catch (error) {
         display.value = 'Error';
+        currentExpression = '';  // Сбросить текущее выражение при ошибке
     }
 }
 
