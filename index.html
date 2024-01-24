@@ -4,16 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
-    <title>КЭП Колледж</title>
+    <title>Ваш Колледж</title>
 </head>
 <body>
     <header>
-        <h1>Колледж Экономики и права</h1>
+        <h1>Ваш Колледж</h1>
         <nav>
             <ul>
                 <li><a href="#about">О Нас</a></li>
                 <li><a href="#programs">Программы</a></li>
-                <li><a href="#schedule">Расписание</a></li>
+                <li><a href="#schedule" onclick="showSchedule()">Расписание</a></li>
                 <li><a href="#contact">Контакты</a></li>
             </ul>
         </nav>
@@ -31,7 +31,15 @@
 
     <section id="schedule">
         <h2>Расписание Занятий</h2>
-        <p>Проверьте расписание ваших занятий и других мероприятий.</p>
+        <div id="courseSchedule" style="display: none;">
+            <h3>Расписание Курсов</h3>
+            <ul>
+                <li><strong>Курс 1:</strong> Понедельник, Среда - 10:00-12:00</li>
+                <li><strong>Курс 2:</strong> Вторник, Четверг - 14:00-16:00</li>
+                <li><strong>Курс 3:</strong> Среда, Пятница - 12:00-14:00</li>
+                <li><strong>Курс 4:</strong> Понедельник, Четверг - 16:00-18:00</li>
+            </ul>
+        </div>
     </section>
 
     <section id="contact">
