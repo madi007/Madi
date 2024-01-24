@@ -31,14 +31,13 @@
 
     <section id="schedule">
         <h2>Расписание Занятий</h2>
+        <button onclick="showSchedule()">Показать Расписание</button>
         <div id="courseSchedule" style="display: none;">
             <h3>Расписание Курсов</h3>
-            <ul>
-                <li><strong>Курс 1:</strong> Понедельник, Среда - 10:00-12:00</li>
-                <li><strong>Курс 2:</strong> Вторник, Четверг - 14:00-16:00</li>
-                <li><strong>Курс 3:</strong> Среда, Пятница - 12:00-14:00</li>
-                <li><strong>Курс 4:</strong> Понедельник, Четверг - 16:00-18:00</li>
+            <ul id="scheduleList">
+                <!-- Здесь будет отображаться расписание -->
             </ul>
+            <button onclick="saveSchedule()">Сохранить Расписание</button>
         </div>
     </section>
 
