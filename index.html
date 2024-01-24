@@ -40,6 +40,9 @@
             .then(response => response.json())
             .then(data => {
                 alert(data.message); // Или другая обработка ответа
+
+                // Перенаправление на главный экран после успешной регистрации
+                window.location.href = '/main.html'; // Замените 'main.html' на ваш главный файл
             })
             .catch(error => {
                 console.error('Ошибка:', error);
