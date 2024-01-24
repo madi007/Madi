@@ -14,7 +14,7 @@ function clearDisplay() {
 
 function calculate() {
     try {
-        let result = new Function('return ' + currentExpression)();
+        let result = math.evaluate(currentExpression);
         if (result === undefined || isNaN(result)) {
             throw new Error("Invalid expression");
         }
