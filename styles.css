@@ -4,6 +4,8 @@ body {
     justify-content: center;
     height: 100vh;
     margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f3f3f3;
 }
 
 .calculator {
@@ -11,6 +13,8 @@ body {
     border: 1px solid #ccc;
     border-radius: 5px;
     overflow: hidden;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 #display {
@@ -19,6 +23,8 @@ body {
     font-size: 20px;
     text-align: right;
     box-sizing: border-box;
+    border: none;
+    outline: none;
 }
 
 .buttons {
@@ -42,4 +48,13 @@ button:hover {
 
 .zero {
     grid-column: span 2;
+}
+
+.history-link {
+    display: block;
+    margin-top: 10px;
+    text-align: center;
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
 }
