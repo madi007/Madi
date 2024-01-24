@@ -49,11 +49,11 @@ button:hover {
 }
 
 .zero {
-    grid-column: span 1;
+    grid-column: span 2;
 }
 
 .equals {
-    grid-column: span 1;
+    grid-column: span 2;
 }
 
 .history-link {
