@@ -13,7 +13,7 @@ function clearDisplay() {
 
 function calculate() {
     try {
-        let result = eval(currentExpression);
+        let result = new Function('return ' + currentExpression)();
         if (result === undefined || isNaN(result)) {
             throw new Error("Invalid expression");
         }
@@ -24,7 +24,6 @@ function calculate() {
         display.value = 'Error';
         currentExpression = '';  // Сбросить текущее выражение при ошибке
     }
-
 }
 
 function saveResult() {
