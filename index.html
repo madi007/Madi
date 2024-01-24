@@ -13,7 +13,7 @@
             <ul>
                 <li><a href="#about">О Нас</a></li>
                 <li><a href="#programs">Программы</a></li>
-                <li><a href="#schedule-button" onclick="showSchedule()">Расписание</a></li>
+                <li><a href="#schedule-section" onclick="showSchedule()">Расписание</a></li>
                 <li><a href="#contact">Контакты</a></li>
             </ul>
         </nav>
@@ -27,6 +27,18 @@
     <section id="programs">
         <h2>Образовательные Программы</h2>
         <p>Изучите разнообразие программ, которые мы предлагаем нашим студентам.</p>
+    </section>
+
+    <section id="schedule-section" style="display: none;">
+        <h2>Расписание</h2>
+        <button onclick="showSchedule()">Показать Расписание</button>
+        <div id="courseSchedule" style="display: none;">
+            <h3>Расписание Курсов</h3>
+            <ul id="scheduleList">
+                <!-- Здесь будет отображаться расписание -->
+            </ul>
+            <button onclick="saveSchedule()">Сохранить Расписание</button>
+        </div>
     </section>
 
     <section id="contact">
