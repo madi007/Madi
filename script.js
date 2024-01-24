@@ -13,7 +13,10 @@ function clearDisplay() {
 
 function calculate() {
     try {
-        let result = Function('"use strict"; return (' + currentExpression + ')')();
+        let result = eval(currentExpression);
+        if (result === undefined || isNaN(result)) {
+            throw new Error("Invalid expression");
+        }
         display.value = result;
         addToHistory(result);
         currentExpression = '';  // Сбросить текущее выражение после вычисления
@@ -21,6 +24,7 @@ function calculate() {
         display.value = 'Error';
         currentExpression = '';  // Сбросить текущее выражение при ошибке
     }
+
 }
 
 function saveResult() {
