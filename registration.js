@@ -40,3 +40,4 @@ function registerUser() {
     closeRegistrationModal();
     window.location.href = 'user-profile.html'; // Перенаправление на личный кабинет после регистрации
 }
+
