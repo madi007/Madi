@@ -12,8 +12,27 @@
         <p>Здесь вы найдете информацию о нашем уникальном сервисе.</p>
     </div>
     <div class="btn-container">
-        <a href="/register" class="btn">Регистрация</a>
+        <a href="javascript:void(0)" class="btn" onclick="openRegistrationModal()">Регистрация</a>
         <a href="/login" class="btn">Войти</a>
     </div>
+
+    <!-- Модальное окно для регистрации -->
+    <div id="registrationModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeRegistrationModal()">&times;</span>
+            <h2>Регистрация</h2>
+            <form id="registrationForm">
+                <label for="regUsername">Имя пользователя:</label>
+                <input type="text" id="regUsername" name="regUsername" required>
+
+                <label for="regPassword">Пароль:</label>
+                <input type="password" id="regPassword" name="regPassword" required>
+
+                <button type="button" onclick="registerUser()">Зарегистрироваться</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="registration.js"></script>
 </body>
 </html>
