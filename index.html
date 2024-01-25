@@ -6,15 +6,28 @@
     <title>Название вашего сайта</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+        .content {
             text-align: center;
-            margin: 50px;
         }
         h1 {
-            color: #333;
+            color: #4285f4;
         }
         p {
             color: #666;
+        }
+        .btn-container {
+            position: absolute;
+            top: 20px;
+            right: 20px;
         }
         .btn {
             display: inline-block;
@@ -24,13 +37,23 @@
             text-decoration: none;
             background-color: #4285f4;
             color: #fff;
+            border-radius: 5px;
+            margin: 10px;
+            transition: background-color 0.3s ease;
+        }
+        .btn:hover {
+            background-color: #3b79c6;
         }
     </style>
 </head>
 <body>
-    <h1>Добро пожаловать на наш сайт!</h1>
-    <p>Здесь вы найдете информацию о нашем уникальном сервисе.</p>
-    <a href="/register" class="btn">Регистрация</a>
-    <a href="/login" class="btn">Войти</a>
+    <div class="content">
+        <h1>Добро пожаловать на наш сайт!</h1>
+        <p>Здесь вы найдете информацию о нашем уникальном сервисе.</p>
+    </div>
+    <div class="btn-container">
+        <a href="/register" class="btn">Регистрация</a>
+        <a href="/login" class="btn">Войти</a>
+    </div>
 </body>
 </html>
