@@ -14,46 +14,7 @@
         <p>Здесь вы найдете информацию о нашем уникальном сервисе.</p>
     </div>
     <div class="btn-container">
-        <a href="javascript:void(0)" class="btn" onclick="openRegistrationModal()">Регистрация</a>
-        <a href="javascript:void(0)" class="btn" onclick="openLoginModal()">Войти</a>
-        <a href="javascript:void(0)" class="btn" onclick="openUserProfile()">Личный кабинет</a>
+        <a href="login.html" class="btn">Вход</a>
     </div>
-
-    <!-- Модальное окно для регистрации -->
-    <div id="registrationModal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeRegistrationModal()">&times;</span>
-            <h2>Регистрация</h2>
-            <form id="registrationForm">
-                <label for="regUsername">Имя пользователя:</label>
-                <input type="text" id="regUsername" name="regUsername" required>
-
-                <label for="regPassword">Пароль:</label>
-                <input type="password" id="regPassword" name="regPassword" required>
-
-                <button type="button" onclick="registerUser()">Зарегистрироваться</button>
-            </form>
-        </div>
-    </div>
-
-    <!-- Модальное окно для входа -->
-    <div id="loginModal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeLoginModal()">&times;</span>
-            <h2>Вход</h2>
-            <form id="loginForm">
-                <label for="loginUsername">Имя пользователя:</label>
-                <input type="text" id="loginUsername" name="loginUsername" required>
-
-                <label for="loginPassword">Пароль:</label>
-                <input type="password" id="loginPassword" name="loginPassword" required>
-
-                <button type="button" onclick="loginUser()">Войти</button>
-            </form>
-        </div>
-    </div>
-
-    <script src="user.js"></script>
-    <script src="registration.js"></script>
 </body>
 </html>
