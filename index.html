@@ -13,7 +13,8 @@
     </div>
     <div class="btn-container">
         <a href="javascript:void(0)" class="btn" onclick="openRegistrationModal()">Регистрация</a>
-        <a href="/login" class="btn">Войти</a>
+        <a href="javascript:void(0)" class="btn" onclick="openLoginModal()">Войти</a>
+        <a href="javascript:void(0)" class="btn" onclick="openUserProfile()">Личный кабинет</a>
     </div>
 
     <!-- Модальное окно для регистрации -->
@@ -29,6 +30,23 @@
                 <input type="password" id="regPassword" name="regPassword" required>
 
                 <button type="button" onclick="registerUser()">Зарегистрироваться</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Модальное окно для входа -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeLoginModal()">&times;</span>
+            <h2>Вход</h2>
+            <form id="loginForm">
+                <label for="loginUsername">Имя пользователя:</label>
+                <input type="text" id="loginUsername" name="loginUsername" required>
+
+                <label for="loginPassword">Пароль:</label>
+                <input type="password" id="loginPassword" name="loginPassword" required>
+
+                <button type="button" onclick="loginUser()">Войти</button>
             </form>
         </div>
     </div>
