@@ -13,14 +13,17 @@ function closeRegistrationModal() {
     modal.style.display = 'none';
 }
 
-function openLoginModal() {
-    var modal = document.getElementById('loginModal');
-    modal.style.display = 'block';
-}
+function loginUser() {
+    var loginUsername = document.getElementById('loginUsername').value;
+    var loginPassword = document.getElementById('loginPassword').value;
 
-function closeLoginModal() {
-    var modal = document.getElementById('loginModal');
-    modal.style.display = 'none';
+    // Используем функцию из user.js для входа пользователя
+    if (loginUser(loginUsername, loginPassword)) {
+        console.log('Вход выполнен успешно!');
+        window.location.href = 'user-profile.html'; // Перенаправление на личный кабинет
+    } else {
+        console.log('Ошибка входа. Проверьте имя пользователя и пароль.');
+    }
 }
 
 function registerUser() {
@@ -35,28 +38,5 @@ function registerUser() {
     console.log('Пароль:', regPassword);
 
     closeRegistrationModal();
-    openUserProfile();
-}
-
-function loginUser() {
-    var loginUsername = document.getElementById('loginUsername').value;
-    var loginPassword = document.getElementById('loginPassword').value;
-
-    // Используем функцию из user.js для входа пользователя
-    if (loginUser(loginUsername, loginPassword)) {
-        console.log('Вход выполнен успешно!');
-        closeLoginModal();
-        openUserProfile();
-    } else {
-        console.log('Ошибка входа. Проверьте имя пользователя и пароль.');
-    }
-}
-
-function openUserProfile() {
-    if (isLoggedIn()) {
-        var currentUser = getCurrentUser();
-        alert('Добро пожаловать, ' + currentUser.username + '!');
-    } else {
-        alert('Пожалуйста, войдите для доступа к личному кабинету.');
-    }
+    window.location.href = 'user-profile.html'; // Перенаправление на личный кабинет после регистрации
 }
