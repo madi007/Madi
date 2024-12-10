@@ -1,3 +1,4 @@
+// Обработчик вкладок и ползунка
 const sectionsWrapper = document.querySelector('.sections-wrapper');
 const slider = document.querySelector('.slider');
 const tabs = document.querySelectorAll('.tab');
@@ -20,6 +21,7 @@ sectionsWrapper.addEventListener('scroll', () => {
     }
 });
 
+// Модальное окно
 const sendBtn = document.querySelector('.footer-btn.present-btn');
 const modal = document.querySelector('.modal');
 const closeModalBtn = document.querySelector('.close-modal-btn');
@@ -43,7 +45,7 @@ function hideModal() {
     modal.classList.add('hidden');
 }
 
-// Обработчики событий
+// Обработчики событий для модального окна
 sendBtn.addEventListener('click', showModal);
 closeModalBtn.addEventListener('click', hideModal);
 
@@ -54,48 +56,45 @@ document.addEventListener('click', (e) => {
     }
 });
 
-document.addEventListener("DOMContentLoaded", function() {
-    // Получаем элементы
+// Работа с изображением
 const uploadButton = document.getElementById('upload-button');
 const uploadedImage = document.getElementById('uploaded-image');
 const imageContainer = document.getElementById('image-container');
 
 // Загружаем изображение из LocalStorage, если оно там есть
-window.onload = function() {
-  const savedImage = localStorage.getItem('uploadedImage');
-  if (savedImage) {
+const savedImage = localStorage.getItem('uploadedImage');
+if (savedImage) {
     uploadedImage.src = savedImage; // Устанавливаем src изображения
-    imageContainer.classList.remove('hidden'); // Показываем контейнер
-  }
-};
+    imageContainer.classList.remove('hidden'); // Показываем контейнер с изображением
+}
 
 // Обработчик на кнопку загрузки изображения
 uploadButton.addEventListener('click', function() {
-  const input = document.createElement('input');
-  input.type = 'file';
-  input.accept = 'image/*';
+    const input = document.createElement('input');
+    input.type = 'file';
+    input.accept = 'image/*';
 
-  input.onchange = function(event) {
-    const file = event.target.files[0];
-    if (file) {
-      const reader = new FileReader();
-      
-      // Преобразуем изображение в base64
-      reader.onload = function(e) {
-        const imageDataUrl = e.target.result;
-        
-        // Сохраняем изображение в LocalStorage
-        localStorage.setItem('uploadedImage', imageDataUrl);
+    input.onchange = function(event) {
+        const file = event.target.files[0];
+        if (file) {
+            const reader = new FileReader();
+            
+            // Преобразуем изображение в base64
+            reader.onload = function(e) {
+                const imageDataUrl = e.target.result;
+                
+                // Сохраняем изображение в LocalStorage
+                localStorage.setItem('uploadedImage', imageDataUrl);
 
-        // Показываем изображение в контейнере
-        uploadedImage.src = imageDataUrl;
-        imageContainer.classList.remove('hidden'); // Показываем контейнер с изображением
-      };
-      
-      // Читаем файл как Data URL
-      reader.readAsDataURL(file);
-    }
-  };
+                // Показываем изображение в контейнере
+                uploadedImage.src = imageDataUrl;
+                imageContainer.classList.remove('hidden'); // Показываем контейнер с изображением
+            };
+            
+            // Читаем файл как Data URL
+            reader.readAsDataURL(file);
+        }
+    };
 
-  input.click();
+    input.click();
 });
