@@ -2,18 +2,18 @@
   "name": "Kaspi.kz",
   "short_name": "Kaspi.kz",
   "description": "none",
-  "start_url": "./index.html",  // Попробуй ./index.html вместо /index.html
+  "start_url": "./index.html",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#000000",
   "icons": [
     {
-      "src": "/img/your-icon.png",   // Убедись, что этот файл существует в /img
+      "src": "/img/your-icon.png",
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "/img/your-icon-kaspi.png",   // И для этой иконки тоже
+      "src": "/img/your-icon-kaspi.png",
       "sizes": "512x512",
       "type": "image/png"
     }
