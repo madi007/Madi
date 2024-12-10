@@ -1,18 +1,18 @@
 const CACHE_NAME = "id-app-cache-v1";
 const urlsToCache = [
-  "./",
-  "./index.html",
-  "./styles.css",
-  "./script.js",
-  "./manifest.json",
-  "./img/your-icon.png",
-  "./img/your-icon-kaspi.png",
-  "./img/qr.png",
-  "./img/upload.png",
-  "./img/qr-code.png",
-  "./img/Back.png"
+  "/index.html",               // Главная страница
+  "/styles.css",                // Стили
+  "/script.js",                 // Скрипт
+  "/manifest.json",             // Манифест
+  "/img/icon-192x192.png",      // Иконка 192x192
+  "/img/icon-512x512.png",      // Иконка 512x512
+  "/img/qr.png",                // Иконка QR
+  "/img/upload.png",            // Иконка загрузки
+  "/img/qr-code.png",          // Иконка QR-кода
+  "/img/Back.png"               // Иконка кнопки "Назад"
 ];
 
+// Установка Service Worker и кэширование ресурсов
 self.addEventListener("install", (event) => {
   event.waitUntil(
     caches.open(CACHE_NAME).then((cache) => {
@@ -21,6 +21,7 @@ self.addEventListener("install", (event) => {
   );
 });
 
+// Работа с запросами и возврат кэшированных данных
 self.addEventListener("fetch", (event) => {
   event.respondWith(
     caches.match(event.request).then((response) => {
